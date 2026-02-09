@@ -2,48 +2,28 @@
 %{
 // C code external to any function
 #include <stdio.h>
-
-#define DEBUG 0
-
-size_t lineno = 1;
-
-/*
-Highborn Elves
-640 - High Prince, General, Light Armour (Destiny's Call), Spear (Sliver of the Blazing Dawn), Master of Canreig Tower (High Prince must gain 3 additional Learned Spells)
-510 - Commander, Griffon, Shield, Battle Standard Bearer, Dragonforged Armour, Great Weapon, Diadem of Protection
-230 - Mage, Wizard Adept, Pyromancy
-600 - 30 Sea Guard, Musician, Champion, Standard Bearer
-371 - 24 Citizen Archers, Musician
-175 - 10 Citizen Archers, Musician
-632 - 27 Lion Guard, Musician, Champion, Standard Bearer
-365 - Phoenix, Frost Phoenix
-365 - Phoenix, Frost Phoenix
-200 - Sea Guard Reaper
-200 - Sea Guard Reaper
-200 - Sea Guard Reaper
-4488
-*/
 %}
 
 %option noyywrap
 %%
  /* == High Elves == */
 Highborn\ Elves printf("Hochgeborene Elfen");
- /* -- army model rules -- */
- /* armoury */
+ /* -- Army Model Rules -- */
+ /* Armoury */
 Dragonforged\ Armour printf("Drachenfeuerruestung");
- /* -- honours -- */
+ /* -- Honours -- */
 Master\ of\ Canreig\ Tower\ (\(High\ Prince\ must\ gain\ 3\ additional\ Learned\ Spells\))? printf("Meister von Turm Canreig");
 
- /* -- special items -- */
+ /* -- Special Items -- */
 Sliver\ of\ the\ Blazing\ Dawn printf("Splitter der gleissenden Morgenroete");
 Diadem\ of\ Protection printf("Diadem des Schutzes");
 
- /* -- units -- */
+ /* -- Units -- */
  /* Character Models */
 High\ Prince printf("Hoher Prinz");
 Commander printf("Befehlshaber");
 Mage printf("Magier");
+
  /* Mounts */
 Griffon printf("Greif");
 
@@ -77,8 +57,9 @@ Spear printf("Speer");
 Great\ Weapon printf("Zweihandwaffe");
 
  /* == Arcane Compendium == */
-Destiny\'s\ Call printf("Ruf des Schicksals");
 Pyromancy printf("Pyromantie");
+Destiny\'s\ Call printf("Ruf des Schicksals");
+Aether\ Icon printf("Aether-Ikone");
 
 . printf("%s", yytext);
 %%

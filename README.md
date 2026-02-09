@@ -8,4 +8,4 @@ This tool requires flex to be built.
 
 ## Building Instructions
 
-run `make` in the src directory.
+Run `make` in the src directory.
