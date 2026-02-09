@@ -56,6 +56,7 @@ Shield printf("Schild");
  /* Weapons */
 Spear printf("Speer");
 Great\ Weapon printf("Zweihandwaffe");
+Halbert printf("Hellebarde");
 
  /* == Arcane Compendium == */
 Pyromancy printf("Pyromantie");
