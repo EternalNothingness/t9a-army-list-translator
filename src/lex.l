@@ -36,6 +36,7 @@ Lion\ Guard printf("Loewengarde");
 Phoenix printf("Phoenix");
 Frost\ Phoenix printf("Frostphoenix");
 Fire\ Phoenix printf("Feuerphoenix");
+Warden's\ Bond printf("Verbundenheit des Waechters");
 Sea\ Guard\ Reaper printf("Schnitter der Seegarde");
 
  /* == Rulebook == */
