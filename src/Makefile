@@ -6,8 +6,13 @@ LIBS=-lfl
 
 all: lex
 
+lex.l: definitions.l $(shell find rules -type f) user_code.l
+	cat definitions.l $(shell find rules -type f -print) user_code.l > lex.l
+
+lex.c: lex.l
+	lex -t $< > $@ 
 lex: lex.c
 	$(CC) -o $@ $< $(LIBS)
 
 clean:
-	rm -f lex lex.c *.o
+	rm -f lex lex.c lex.l *.o
