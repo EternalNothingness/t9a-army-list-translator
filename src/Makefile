@@ -4,15 +4,15 @@ LIBS=-lfl
 
 .PHONY: clean all
 
-all: lex
+all: scanner
 
-lex.l: definitions.l $(shell find rules -type f) user_code.l
-	cat definitions.l $(shell find rules -type f -print) user_code.l > lex.l
+scanner.l: definitions.l $(shell find rules -type f) user_code.l
+	cat definitions.l $(shell find rules -type f -print) user_code.l > scanner.l
 
-lex.c: lex.l
+scanner.c: scanner.l
 	lex -t $< > $@ 
-lex: lex.c
+scanner: scanner.c
 	$(CC) -o $@ $< $(LIBS)
 
 clean:
-	rm -f lex lex.c lex.l *.o
+	rm -f scanner scanner.c scanner.l *.o
